@@ -1,4 +1,5 @@
 import React from 'react'
+import Perso from './composant/perso/Perso'
 
 export default class App extends React.Component {
 
@@ -11,11 +12,19 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-      {this.state.map(userInfo => {
+
+      <Perso 
+        nom={this.state.map(elemNom => {return (elemNom.nom)})} 
+        prenom={this.state.map(elemPrenom => {return(elemPrenom.prenom)})}
+        age={this.state.map(elemAge => {return(elemAge.age)})}
+        />
+
+
+      {/* {this.state.map(userInfo => {
         return (
           <h1>{userInfo.nom}, {userInfo.prenom}, {userInfo.age}</h1>
         )
-      })}
+      })} */}
       {/* {this.state.map((userInfo) => {
         return <h1>{userInfo.nom + userInfo.prenom + userInfo.age}</h1>
       })} */}
